@@ -1,0 +1,424 @@
+/* Bin Space — marketing site. One sheet, mobile-first. */
+
+:root {
+    --ink: #0E1116;
+    --ink-soft: #1A1F26;
+    --cream: #F4F1EA;
+    --sand: #E2DDD2;
+    --terracotta: #D97757;
+    --terracotta-deep: #C4633F;
+    --muted: #6B6F76;
+    --card: #FFFFFF;
+    --lid-red: #D64B41;
+    --lid-yellow: #F2B23A;
+    --lid-green: #5AA24E;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.55;
+}
+
+img { max-width: 100%; }
+
+h1, h2, h3 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0;
+}
+
+a { color: var(--ink); }
+
+:focus-visible {
+    outline: 3px solid var(--terracotta);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* --- buttons --- */
+.btn {
+    display: inline-block;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 13px 26px;
+    border-radius: 14px;
+    transition: background-color .15s ease, border-color .15s ease;
+}
+.btn-primary {
+    background: var(--terracotta);
+    color: #fff;
+}
+.btn-primary:hover { background: var(--terracotta-deep); }
+.btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+}
+.btn-ghost:hover { background: #fff; }
+.btn-small { padding: 8px 18px; font-size: 0.92rem; border-radius: 10px; }
+
+.cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+}
+.cta-centre { justify-content: center; }
+.cta-note { font-size: 0.85rem; color: var(--muted); }
+
+/* --- header --- */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    background: var(--ink);
+    color: #fff;
+    padding: 12px clamp(20px, 5vw, 48px);
+}
+.brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #fff;
+}
+.brand-logo { width: 28px; height: 28px; display: block; }
+.brand-name {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+}
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 3vw, 20px);
+}
+.site-nav a {
+    color: rgba(255,255,255,.8);
+    text-decoration: none;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+@media (max-width: 420px) {
+    .brand-name { font-size: 1rem; }
+    .site-nav a { font-size: 0.88rem; }
+    .btn-small { padding: 7px 13px; }
+}
+.site-nav a:hover { color: #fff; }
+.site-nav a.btn-primary { color: #fff; }
+
+/* --- hero --- */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: clamp(48px, 8vw, 96px) 20px clamp(40px, 6vw, 80px);
+}
+.eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin: 0 0 14px;
+}
+.hero h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 400;
+    font-size: clamp(2rem, 5.4vw, 3.3rem);
+    line-height: 1.08;
+    letter-spacing: -0.5px;
+}
+.lede {
+    color: var(--muted);
+    font-size: 1.08rem;
+    max-width: 34em;
+    margin: 20px 0 0;
+}
+
+/* hero art: composed product-card cluster (decorative) */
+.hero-art {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+.mock-card {
+    background: var(--card);
+    border: 1px solid var(--sand);
+    border-radius: 18px;
+    padding: 18px 20px;
+    box-shadow: 0 12px 32px rgba(14,17,22,.07);
+}
+.mock-schedule {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transform: rotate(-1.2deg);
+}
+.mock-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 54px;
+}
+.mock-date .dow {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    color: var(--muted);
+    letter-spacing: .4px;
+}
+.mock-date .dom {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.mock-date .mon { font-size: 0.74rem; color: var(--muted); }
+.mock-bins { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.mock-head {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.bin-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.84rem;
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 999px;
+    padding: 5px 12px 5px 9px;
+}
+.dot { width: 15px; height: 7px; border-radius: 3px; display: inline-block; }
+.dot-red { background: var(--lid-red); }
+.dot-yellow { background: var(--lid-yellow); }
+.dot-green { background: var(--lid-green); }
+.mock-listing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    transform: rotate(0.8deg);
+}
+.mock-listing-main { display: flex; flex-direction: column; gap: 3px; }
+.mock-sub { font-size: 0.82rem; color: var(--muted); }
+.mock-price {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.4rem;
+}
+.mock-chip {
+    align-self: flex-end;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 999px;
+    padding: 9px 18px;
+    transform: rotate(-0.6deg);
+}
+
+/* --- how it works --- */
+.how {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: clamp(32px, 5vw, 64px) 20px;
+    border-top: 1px solid var(--sand);
+}
+.how h2, .waitlist h2 {
+    font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+    letter-spacing: -0.3px;
+}
+.how-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 28px;
+}
+.how-card {
+    background: var(--card);
+    border: 1px solid var(--sand);
+    border-radius: 16px;
+    padding: 22px;
+}
+.lid {
+    display: block;
+    width: 44px;
+    height: 8px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+.lid-red { background: var(--lid-red); }
+.lid-yellow { background: var(--lid-yellow); }
+.lid-green { background: var(--lid-green); }
+.lid-ink { background: var(--ink); }
+.how-card h3 { font-size: 1.08rem; margin-bottom: 8px; }
+.how-card p { margin: 0; color: var(--muted); font-size: 0.94rem; }
+.fine-print {
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin: 20px 0 0;
+    max-width: 52em;
+}
+
+/* --- waitlist band --- */
+.waitlist {
+    background: var(--ink);
+    color: var(--cream);
+}
+.waitlist-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: clamp(48px, 7vw, 88px) 20px;
+}
+.waitlist h2 { color: #fff; }
+.waitlist p { color: rgba(244,241,234,.75); max-width: 36em; }
+.waitlist .cta-note { color: rgba(244,241,234,.6); }
+.unlock-card {
+    background: var(--card);
+    color: var(--ink);
+    border-radius: 18px;
+    padding: 24px;
+    max-width: 380px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-self: center;
+    box-shadow: 0 16px 44px rgba(0,0,0,.35);
+}
+.unlock-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+.unlock-status {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.3rem;
+}
+.unlock-bar {
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 999px;
+    height: 14px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+.unlock-fill {
+    display: block;
+    width: 68%;
+    height: 100%;
+    background: var(--terracotta);
+    border-radius: 999px;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .unlock-fill {
+        animation: fill-up 1.1s cubic-bezier(.25,.7,.3,1) both;
+        animation-delay: .2s;
+    }
+    @keyframes fill-up {
+        from { width: 8%; }
+        to { width: 68%; }
+    }
+}
+.unlock-count { font-size: 0.85rem; color: var(--muted); }
+
+/* --- apps page --- */
+.apps-page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: clamp(56px, 9vw, 110px) 20px;
+    text-align: center;
+}
+.app-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    box-shadow: 0 12px 32px rgba(14,17,22,.18);
+    margin-bottom: 28px;
+}
+.apps-page h1 {
+    font-size: clamp(1.6rem, 4.4vw, 2.4rem);
+    letter-spacing: -0.3px;
+}
+.apps-page .lede { margin: 18px auto 0; }
+.store-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 32px;
+}
+.store-pill {
+    font-size: 0.85rem;
+    color: var(--muted);
+    background: var(--card);
+    border: 1px solid var(--sand);
+    border-radius: 999px;
+    padding: 8px 16px;
+}
+
+/* --- footer --- */
+.site-footer {
+    border-top: 1px solid var(--sand);
+    padding: 28px clamp(20px, 5vw, 48px);
+}
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 1080px;
+    margin: 0 auto;
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+.footer-brand { display: flex; align-items: center; gap: 10px; }
+.footer-mark { width: 26px; height: 26px; border-radius: 7px; }
+.footer-links { display: flex; gap: 22px; }
+.footer-links a { color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--ink); text-decoration: underline; }
+
+/* --- larger screens --- */
+@media (min-width: 640px) {
+    .how-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 900px) {
+    .hero { grid-template-columns: 1.15fr 0.85fr; }
+    .hero-art { margin: 0 0 0 auto; }
+    .how-grid { grid-template-columns: repeat(4, 1fr); }
+    .waitlist-inner { grid-template-columns: 1.1fr 0.9fr; }
+    .unlock-card { justify-self: end; }
+}

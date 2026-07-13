@@ -1,0 +1,42 @@
+{@io.quarkiverse.roq.frontmatter.runtime.model.Page page}
+{@io.quarkiverse.roq.frontmatter.runtime.model.Site site}
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{#seo page site /}
+<link rel="icon" type="image/png" href="{site.url('/images/favicon.png')}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{site.url('/css/main.css')}">
+</head>
+<body>
+<header class="site-header">
+    <a class="brand-lockup" href="{site.url('/')}">
+        <img class="brand-logo" src="{site.url('/images/ibis.png')}" alt="">
+        <span class="brand-name">Bin Space</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+        <a href="{site.url('/apps/')}">Get the app</a>
+        <a class="btn btn-primary btn-small" href="https://app.bin-space.app">Sign up</a>
+    </nav>
+</header>
+<main>
+{#insert /}
+</main>
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <img src="{site.url('/images/icon-full.png')}" alt="" class="footer-mark">
+            <span>&copy; Bin Space</span>
+        </div>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="{site.url('/apps/')}">Get the app</a>
+            <a href="https://app.bin-space.app/terms/">Terms &amp; Conditions</a>
+        </nav>
+    </div>
+</footer>
+</body>
+</html>
