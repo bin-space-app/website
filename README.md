@@ -1,4 +1,4 @@
-# Bin Space — marketing website
+# Bin Space - marketing website
 
 Static marketing site for [Bin Space](https://www.bin-space.app), built with
 [Quarkus Roq](https://iamroq.dev/) and deployed to GitHub Pages at
@@ -6,9 +6,9 @@ Static marketing site for [Bin Space](https://www.bin-space.app), built with
 
 ## Layout
 
-- `src/main/resources/content/` — pages (`index.html`, `apps.html`)
-- `src/main/resources/templates/layouts/` — Qute layouts (`default.html`)
-- `src/main/resources/public/` — static assets served as-is (CSS, images, `CNAME`)
+- `src/main/resources/content/` - pages (`index.html`, `apps.html`)
+- `src/main/resources/templates/layouts/` - Qute layouts (`default.html`)
+- `src/main/resources/public/` - static assets served as-is (CSS, images, `CNAME`)
 
 ## Local dev
 
